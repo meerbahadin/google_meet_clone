@@ -1,0 +1,42 @@
+
+body {
+  background: #ffffff;
+}
+
+a.btn.btn-lg.btn-success.custom {
+  background: #08645a;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px !important;
+ 
+}
+.icon-md {
+  font-size: 25px;
+}
+
+input.form-control {
+  border: none;
+  border-bottom: 2px solid #E9ECEF;
+  transition: 0.4s;
+}
+
+input.form-control:focus {
+  border: none;
+  background: #E9ECEF;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@media all and (max-width: 480px) {
+  .buttons {
+    width: 100% !important;
+    display: block !important;
+    margin-top: 20px;
+  }
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
+

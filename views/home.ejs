@@ -1,0 +1,59 @@
+<%- include('partials/header' , {roomId : ''}) %>
+<body>
+    <%- include('partials/navbar')%>
+    <div class="jumbotron bg-white">
+    <div class="container-fluid">
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <h2 > Premium video meetings. Now free for everyone.</h2>
+                <p class="lead my-4">We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.</p>
+                    <div>
+                        <div class="row">
+                          <div class="col">
+                            <a href="/meet" class="btn btn-lg btn-success custom buttons"><i class="fas fa-video"> </i>  New Metting</a>
+                          </div>
+                        </div>
+                        <div class="row align-items-end my-4">
+                            <div class="col-lg-6 col-8">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text border-0" id="basic-addon1"><i class="fas fa-keyboard    "></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="roomid-input" placeholder="Enter the room id to join" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                              </div>
+                              <div class="col-lg-6 col-4">
+                                <button class="btn btn-white font-weight-bold disabled" id="join-btn" style="color : #08645A">Join</button>
+                              </div>
+                        </div>
+                      </div>
+             </div>
+             <div class="col-lg-6 col-md-12 col-sm-12">
+               <img width="100%" src="https://www.gstatic.com/meet/google_meet_marketing_ongoing_meeting_grid_427cbb32d746b1d0133b898b50115e96.jpg"
+                alt="" 
+                class="shadow rounded"
+                srcset=""
+                >
+             </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+const idInput = document.getElementById('roomid-input');
+const joinBtn = document.getElementById('join-btn');
+idInput.addEventListener('keyup' , (e) => {
+  joinBtn.classList.remove('disabled');
+  if(e.target.value === '') {
+    joinBtn.classList.add('disabled');
+  }
+})
+
+joinBtn.addEventListener('click' , () => {
+  window.location.href = `/${idInput.value}`;
+})
+
+</script>
+</html>
+
+<%- include('partials/footer') %>
