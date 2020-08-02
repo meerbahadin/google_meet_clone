@@ -30,4 +30,5 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3000);
+const port = Number(3000 || process.env.PORT)
+server.listen(port);
