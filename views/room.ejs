@@ -2,13 +2,16 @@
 <%- include('partials/RTC') %>
 <body>
   <%- include('partials/navbar')%>
-  <div id="video-grid"></div>
-  <div class="badge badge-dark text-wrap fixed-bottom m-3 py-4" style="width: 40rem;">
-    <span class="h6">Use this code to invite other to the meeting </span> 
-    <code style="color: #08645a;" class="bg-light p-2 rounded user-select-all" id="room-id"><%= roomId %></code>
-    <span class="font-weight-light" id="copy-icon" hidden> <i class="fas fa-copy mx-1"></i> Copied</span>
+  <div class="card border-0 shadow-sm" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">Your Metting Id </h5>
+      <h6 class="card-subtitle mb-2 text-muted">Simly click or tab on the id and send it to the person you want to join.</h6>
+      <code style="color: #08645a;" class="bg-light p-2 rounded user-select-all" id="room-id"><%= roomId %></code>
+      <span class="font-weight-light" id="copy-icon" hidden> <i class="fas fa-copy mx-1"></i> Copied</span>
+    </div>
   </div>
   
+  <div id="video-grid"></div>
 </body>
 <script>
 const idBar = document.getElementById('room-id');
@@ -17,7 +20,6 @@ const copyIcon = document.getElementById('copy-icon');
 idBar.addEventListener('click' , (e) => {
   document.execCommand("copy");
   copyIcon.removeAttribute('hidden');
-  
   setTimeout(() => {
     copyIcon.setAttribute('hidden' , true);
   }, 3000);

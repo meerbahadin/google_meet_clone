@@ -3,6 +3,15 @@ body {
   background: #ffffff;
 }
 
+a {
+  color: #08645994;
+}
+a:hover {
+  text-decoration: none;
+  color: #08645994;
+  
+}
+
 a.btn.btn-lg.btn-success.custom {
   background: #08645a;
   font-size: 15px;
