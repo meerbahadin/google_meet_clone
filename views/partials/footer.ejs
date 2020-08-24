@@ -1,3 +1,28 @@
+    <!-- Halfmoon JS -->
+    <script src="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/js/halfmoon.min.js"></script>
+    <script type="text/javascript" defer>
+    let theme = localStorage.getItem('theme');
+     document.getElementById('theme').addEventListener('click' , () => {
+       themeToggler();
+     });
+     
+     function themeToggler() {
+       if(localStorage.getItem('theme') === 'dark') {
+         halfmoon.toggleDarkMode();
+         localStorage.setItem('theme' , 'light');
+       } else {
+        halfmoon.toggleDarkMode();
+        localStorage.setItem('theme' , 'dark');
+       }
+     }
 
+     document.addEventListener('DOMContentLoaded' , () => {
+       if(theme === 'dark') {
+         halfmoon.toggleDarkMode();
+       }
+     })
+
+     
+    </script>
 </body>
 </html>
