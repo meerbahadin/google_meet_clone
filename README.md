@@ -4,7 +4,7 @@
 
 Google meet is an online platform to setup meeting .
 
-[Check Out The Demo On Heroku](https://i.dansdeals.com/wp-content/uploads/2020/05/06133552/google-2.png)
+[Check Out The Demo On Heroku](https://infinite-lake-48881.herokuapp.com/)
 
 
 
