@@ -20,8 +20,9 @@
                 </div>
                 <hr>
                 <p><i class="fab fa-instagram"></i> Follow Me On Instagram</p>
-                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-888e26a1-d3ab-47e1-9f83-c83df8203404"></div>
+                <script src="https://apps.elfsight.com/p/platform.js" defer>
+                </script>
+                <div class="elfsight-app-888e26a1-d3ab-47e1-9f83-c83df8203404"></div>
               </div>
       </div>
            </div>
@@ -44,7 +45,7 @@
   </div>
 </footer>
 </body>
-<script>
+<script defer>
 const idInput = document.getElementById('roomid-input');
 const joinBtn = document.getElementById('join-btn');
 idInput.addEventListener('input' , (e) => {
@@ -53,6 +54,10 @@ idInput.addEventListener('input' , (e) => {
     joinBtn.classList.add('disabled');
   }
 })
+
+setTimeout(() => {
+  document.querySelector('a.eapps-link').remove();
+}, 1000);
 
 joinBtn.addEventListener('click' , () => {
   const id = idInput.value;
