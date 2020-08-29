@@ -1,6 +1,6 @@
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
-const myPeer = new Peer(undefined , {
+const myPeer = new Peer(undefined, {
   host: 'meetclone.herokuapp.com',
   secure: true,
   port: 443,
@@ -51,7 +51,7 @@ function connectToNewUser(userId, stream) {
   peers[userId] = call;
 }
 
-function addVideoStream(video , stream) {
+function addVideoStream(video, stream) {
   video.srcObject = stream;
   video.addEventListener('loadedmetadata', () => {
     video.play();
@@ -59,59 +59,96 @@ function addVideoStream(video , stream) {
   videoGrid.append(video);
 }
 
-
 const miceToggle = () => {
   const enabled = mystream.getAudioTracks()[0].enabled;
   if (enabled) {
     mystream.getAudioTracks()[0].enabled = false;
-    console.log('success');
     setUnmuteButton();
   } else {
     setMuteButton();
     mystream.getAudioTracks()[0].enabled = true;
   }
-}
+};
+
+//buttons
+const mics = document.querySelectorAll('#mic');
+const camera = document.querySelectorAll('#camera');
+
+//audio toggling
 
 const setMuteButton = () => {
   const html = `
     <i class="fas fa-microphone"></i>
     <span>Mute</span>
-  `
-  document.querySelector('#mic').innerHTML = html;
-}
+  `;
+  const mobileHtml = `
+  <i class="unmute fas fa-microphone"></i>`;
+  for (const item of mics) {
+    if (window.innerWidth <= '580') {
+      item.innerHTML = mobileHtml;
+    } else {
+      item.innerHTML = html;
+    }
+  }
+};
+
+
 
 const setUnmuteButton = () => {
   const html = `
     <i class="unmute fas fa-microphone-slash"></i>
     <span>Unmute</span>
-  `
-  document.querySelector('#mic').innerHTML = html;
-}
+  `;
+  const mobileHtml = `
+  <i class="unmute fas fa-microphone-slash"></i>`;
+  for (const item of mics) {
+    if (window.innerWidth <= '580') {
+      item.innerHTML = mobileHtml;
+    } else {
+      item.innerHTML = html;
+    }
+  }
+};
+
+//video toggling
 
 const videoToggle = () => {
-  console.log('object')
   let enabled = mystream.getVideoTracks()[0].enabled;
   if (enabled) {
     mystream.getVideoTracks()[0].enabled = false;
-    setPlayVideo()
+    setPlayVideo();
   } else {
-    setStopVideo()
+    setStopVideo();
     mystream.getVideoTracks()[0].enabled = true;
   }
-}
+};
 
 const setStopVideo = () => {
   const html = `
     <i class="fas fa-video"></i>
     <span>Stop Video</span>
-  `
-  document.querySelector('#camera').innerHTML = html;
-}
+  `;
+  const mobileHtml = `<i class="stop fas fa-video"></i>`;
+  for (const item of camera) {
+    if (window.innerWidth <= '580') {
+      item.innerHTML = mobileHtml;
+    } else {
+      item.innerHTML = html;
+    }
+  }
+};
 
 const setPlayVideo = () => {
   const html = `
   <i class="stop fas fa-video-slash"></i>
     <span>Play Video</span>
-  `
-  document.querySelector('#camera').innerHTML = html;
-}
+  `;
+  const mobileHtml = `<i class="stop fas fa-video-slash"></i>`
+  for (const item of camera) {
+    if (window.innerWidth <= '580') {
+      item.innerHTML = mobileHtml;
+    } else {
+      item.innerHTML = html;
+    }
+  }
+};
