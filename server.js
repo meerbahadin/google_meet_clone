@@ -16,6 +16,11 @@ app.get('/meet', (req, res) => {
 });
 
 app.get('/:room', (req, res) => {
+  const id = req.params.room;
+  const regex = new RegExp(/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i);
+  if(!regex.test(id)) {
+    res.redirect('/');
+  }
   res.render('room', { roomId: req.params.room });
 });
 
