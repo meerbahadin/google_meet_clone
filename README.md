@@ -21,8 +21,8 @@ navigate to http://localhost:3000/ to see the application
 
 ## Screenshots
 
-![](https://res.cloudinary.com/dcukymbq5/image/upload/v1598713943/1_kyruwz.png)
-![](https://res.cloudinary.com/dcukymbq5/image/upload/v1598713941/2_ejxnng.png)
+![](https://res.cloudinary.com/dcukymbq5/image/upload/v1624195394/scrnli_6_20_2021_4-23-05_PM_ctv2ul.png)
+![](https://res.cloudinary.com/dcukymbq5/image/upload/v1624195482/scrnli_6_20_2021_4-24-34_PM_a1pr01.png)
 
 
 
